@@ -1,12 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%@page import="java.util.List"%>
-<%@page import="gerenciador.com.github.gcestaro.servlet.Empresa"%>
-
-<%
-List<Empresa> empresas = (List<Empresa>) request.getAttribute("empresas");
-%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -16,15 +11,9 @@ List<Empresa> empresas = (List<Empresa>) request.getAttribute("empresas");
 </head>
 <body>
 	<ul>
-
-		<%
-		for (var empresa : empresas) {
-		%>
-		<li><%=empresa.getNome()%></li>
-		<%
-		}
-		;
-		%>
+		<c:forEach items="${ empresas }" var="empresa">
+			<li>${ empresa.nome }</li>
+		</c:forEach>
 	</ul>
 </body>
 </html>
