@@ -29,4 +29,14 @@
     <servlet-name>ListaEmpresasServlet</servlet-name>
     <url-pattern>/ListaEmpresasServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RemoveEmpresaServlet</display-name>
+    <servlet-name>RemoveEmpresaServlet</servlet-name>
+    <servlet-class>gerenciador.com.github.gcestaro.servlet.RemoveEmpresaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RemoveEmpresaServlet</servlet-name>
+    <url-pattern>/RemoveEmpresaServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

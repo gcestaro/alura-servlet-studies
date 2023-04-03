@@ -2,6 +2,7 @@ package gerenciador.com.github.gcestaro.servlet;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class BancoDeDados {
 
@@ -21,4 +22,12 @@ public class BancoDeDados {
 	public List<Empresa> getEmpresas() {
 		return empresas;
 	}
+
+    public void removeEmpresa(UUID uuid) {
+        empresas.stream()
+            .filter(empresa -> empresa.getUuid().equals(uuid))
+            .findFirst()
+            .ifPresent(empresas::remove);
+        
+    }
 }
